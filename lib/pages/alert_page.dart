@@ -32,10 +32,21 @@ class AlertPage extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("BLOG POST PUBLISHED "),
-          backgroundColor: Colors.white,
-          content: Text(
-              "Publish a post · ​Sign in to Blogger. · Under the name of a blog, click Posts Posts and then · On the right sidebar, next to Published on Published on  "),
+          content: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://img.icons8.com/ios/344/apple-app-store--v2.png"),
+              ),
+              Title(
+                color: Colors.black,
+                child: Text("Blog post published"),
+              ),
+              Text("tihs blog post has been published . Team members"
+                  "will be able to edit this post and republish changes"),
+            ],
+          ),
           actions: [
             TextButton(
               onPressed: () {
@@ -58,10 +69,20 @@ class AlertPage extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("YOUR VIDEO HES BEEN UPLOADED"),
-          backgroundColor: Colors.white,
-          content: Text(
-              "your video within 48 hours and let you know whether it has been authorized"),
+          content: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.network(
+                "https://a.wattpad.com/useravatar/_rmlr_08.256.513168.jpg",
+              ),
+              Title(
+                color: Colors.black,
+                child: Text("YOUR VIDEO HAS BEEN UPLOADED"),
+              ),
+              Text(
+                  "Upload videos in YouTube Studio. Sign in to YouTube Studio. In the top-right corner, click CREATE and then Upload videos ."),
+            ],
+          ),
           actions: [
             TextButton(
               onPressed: () {
@@ -72,6 +93,18 @@ class AlertPage extends StatelessWidget {
             TextButton(
               onPressed: () {},
               child: Text("NEXT"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text("Copy Link"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text("Untitle.com/total/promo"),
             ),
           ],
         );
@@ -107,7 +140,7 @@ class AlertPage extends StatelessWidget {
               onPressed: () {
                 showMyAlert3(context);
               },
-              child: Text("Alert2"),
+              child: Text("Alert3"),
             )
           ],
         ),
